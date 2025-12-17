@@ -1,0 +1,238 @@
+# .cursorrules
+# ──────────────────────────────────────────────────────────────
+# 🧠 Cursor Development Rules — Christian Oscar Papa (2025)
+# Stack: Next.js 16 • TypeScript • Tailwind v4 • Zustand • React Query
+# Objetivo: Mantener un nivel de excelencia en código, UX, y arquitectura.
+# ──────────────────────────────────────────────────────────────
+
+## 🧭 Filosofía General
+- Priorizar código limpio, mantenible y escalable.
+- Escribir componentes con intención: menos lógica, más composición.
+- Adoptar el principio **“Code as Craft”** — cada archivo debe ser legible como una historia.
+- Usar **AI como copiloto**, no como sustituto: toda sugerencia generada por IA debe pasar revisión humana.
+- Favorecer patrones funcionales y declarativos (no imperativos).
+- Aplicar “Progressive Enhancement” en todas las vistas públicas.
+
+---
+
+## 🧩 Estructura del Proyecto
+- Usar **App Router** con estructura segmentada por propósito:
+app/
+(marketing)/
+(dashboard)/
+api/
+lib/
+components/
+hooks/
+stores/
+types/
+styles/
+
+markdown
+Copiar código
+- Separar lógica de UI, estado y datos.
+- Crear un archivo `/lib/config/site.ts` con metadatos globales (SEO, branding, links).
+- Mantener consistencia en imports: siempre absolutos (`@/components/...`).
+
+---
+
+## ⚛️ Reglas React / Next.js
+- Usar **Server Components** por defecto.
+- Aplicar `use client` solo cuando haya:
+- Interactividad UI (onClick, inputs, animaciones)
+- Estado local o global
+- Librerías client-side
+- Usar **metadata dinámica** (`generateMetadata`) para SEO inteligente.
+- Usar **streaming + Suspense boundaries** para optimizar carga inicial.
+- Implementar **error.js**, **loading.js**, y **not-found.js** por ruta.
+- Evitar lógica en componentes de página; delegar a hooks o utils.
+
+---
+
+## 🧠 Estado y Datos
+### Local
+- `useState` → estados simples
+- `useReducer` → lógicas complejas
+- `useContext` → solo para temas globales pequeños (Theme, i18n)
+### Global
+- **Zustand**:
+- Crear stores por feature (`useCartStore`, `useAuthStore`, etc.)
+- Usar persistencia solo cuando aporte UX
+- Evitar `any`; tipar con interfaces claras
+- Incluir selectores para rendimiento (`useStore((s) => s.items)`)
+- **React Query**:
+- Server state → `useQuery`, `useMutation`
+- Suspense y prefetch en Server Components
+- Manejo de errores con `onError` y UI amigable (toast, alert)
+
+---
+
+## 🧱 TypeScript
+- `strict: true` obligatorio.
+- No usar `any` ni `unknown` sin justificación en comentario.
+- Inferir tipos de Zod (`z.infer<typeof schema>`).
+- Usar `interface` para estructuras y `type` para combinaciones.
+- Implementar tipos generics y mapped types cuando sean útiles.
+- Exportar tipos compartidos desde `/types/`.
+- Activar `noImplicitReturns`, `noUnusedLocals`, `exactOptionalPropertyTypes`.
+
+---
+
+## 🎨 UI / Tailwind / Diseño
+- Usar **Tailwind v4** con `@layer tokens` y `@theme`:
+- `brand` → #5f8e82 / `brand-600` → #4f786d
+- `neutral`, `accent`, `muted`, `surface`
+- Definir tokens en `globals.css`:
+```css
+@layer tokens {
+  --brand-500: oklch(70% 0.1 180);
+  --neutral-950: oklch(18% 0.02 270);
+}
+Mantener coherencia cromática y contraste AAA.
+
+Preferir diseño mobile-first.
+
+Componentes UI:
+
+Basarse en Shadcn UI + Radix primitives
+
+Añadir microinteracciones con Framer Motion
+
+Animaciones → sutiles, con staggerChildren y easeInOut
+
+No usar colores directos en JSX — usar tokens Tailwind.
+
+Dark mode con class="dark" y variables CSS (--color-text, --color-bg).
+
+🧰 Lógica / Código / Estilo
+Indentación: tabs
+
+Strings: 'single quotes'
+
+No usar ; (excepto en casos ambiguos)
+
+Máx. 100 caracteres por línea
+
+Usar === siempre
+
+Prefijos:
+
+Handlers → handleClick, handleSubmit
+
+Booleans → isOpen, hasError
+
+Hooks → useAuth, useForm
+
+Eliminar variables no usadas
+
+Evitar console.log en producción (usar debug() o logger propio)
+
+Documentar funciones públicas con JSDoc
+
+🔒 Seguridad
+Sanitizar entradas con DOMPurify o validaciones Zod.
+
+Usar next/headers y cookies() en Server Components.
+
+Implementar Content Security Policy en middleware.
+
+No exponer tokens en el cliente.
+
+Deshabilitar dangerouslySetInnerHTML sin limpieza.
+
+🌍 Internacionalización (i18n)
+Usar next-intl o next-i18next.
+
+Evitar strings hardcodeadas — usar useTranslations().
+
+Archivos messages/es.json, messages/en.json, etc.
+
+Añadir fallback locale.
+
+Usar helpers para formato de moneda y fecha (Intl.NumberFormat, Intl.DateTimeFormat).
+
+🧪 Testing
+Unit: Jest + RTL (Arrange–Act–Assert)
+
+Integration: React Testing Library con mocks de API
+
+E2E: Playwright (flows críticos)
+
+Usar data-testid descriptivos
+
+Testear accesibilidad con axe-core
+
+Evitar snapshot testing salvo UI estática
+
+♿ Accesibilidad
+Usar etiquetas semánticas (<main>, <nav>, <section>)
+
+Roles ARIA solo cuando sea necesario
+
+Focus visible siempre
+
+Contraste mínimo 4.5:1
+
+Validar con Lighthouse + axe
+
+Añadir atajos de teclado cuando mejore UX
+
+🚀 Performance
+Activar React Compiler
+
+Evitar useEffect innecesario (usar RSC o memo)
+
+Usar next/image optimizado y priority en hero
+
+Cargar fuentes locales (next/font/local)
+
+Prefetch inteligente con next/link
+
+Medir CWV con Lighthouse y next build --analyze
+
+💾 Error Handling
+Crear error.tsx por segmento
+
+Usar boundaries visuales + feedback claro
+
+Loggear con Sentry o consola de desarrollo
+
+Evitar silencios en errores → siempre informar al usuario
+
+📚 Documentación / AI
+Mantener /docs/architecture.md con decisiones (ADR)
+
+agents.md define estilo de generación IA
+
+Incluir comentario en cada archivo generado por IA:
+
+ts
+Copiar código
+// generated with Cursor + agents.md — reviewed by Christian Oscar Papa
+Usar Markdown con secciones claras, ejemplos y enlaces a doc oficial.
+
+🧠 Commit y Control de Versiones
+Commits semánticos (conventional commits):
+
+feat:, fix:, chore:, refactor:, test:
+
+Cada PR debe incluir descripción y preview (si aplica)
+
+Ignorar report.html, .env.local, .DS_Store
+
+🌌 Nivel de Excelencia
+Antes de hacer merge:
+
+ Lint sin errores
+
+ Tipado estricto
+
+ Accesibilidad AA/AAA
+
+ Performance >90 (Lighthouse)
+
+ Documentación mínima actualizada
+
+ Pruebas críticas corriendo
+
+Si no alcanza excelencia, no se mergea.
