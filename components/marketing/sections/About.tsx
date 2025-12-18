@@ -9,7 +9,7 @@ export function About() {
 			className="relative py-20 lg:py-32 overflow-hidden bg-surface-950"
 		>
 			<Image
-				src="/images/erwan-hesry-uJ-OO3aZsSQ-unsplash.jpg"
+				src="/images/quienes-somos.jpg"
 				alt="Cancha de tenis con jugador al fondo"
 				fill
 				className="object-cover opacity-40"

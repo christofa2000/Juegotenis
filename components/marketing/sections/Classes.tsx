@@ -33,7 +33,7 @@ export function Classes() {
         <ClassesCard
           type="adults"
           title="ADULTOS"
-          imageSrc="/images/couple-playing-tennis-duo.jpg"
+          imageSrc="/images/adultos.jpg"
           imageAlt="Pareja adulta jugando tenis en la cancha"
           description="Clases diseñadas para adultos de todos los niveles. Mejorá tu técnica, desarrollá tu juego y disfrutá del tenis en un ambiente amigable y profesional."
           activeCard={activeCard}

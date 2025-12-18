@@ -1,86 +1,87 @@
 // generated with Cursor — reviewed by Christian Oscar Papa
 import Image from 'next/image'
-import { Button } from '@/components/marketing/ui/Button'
 
 const locations = [
 	{
-		name: 'Núñez',
-		address: 'Delboca 10-20, CABA',
+		name: 'NÚÑEZ',
+		address: 'Santiago Calzadilla 1350, CABA',
+		addressFull: 'Santiago Calzadilla 1350, C1429AAH Cdad. Autónoma de Buenos Aires, Argentina',
 		image: '/images/young-couple-playing-tennis-court.jpg',
 		alt: 'Cancha de tenis en Núñez con jugadores',
+		mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Santiago+Calzadilla+1350,+C1429AAH+Cdad.+Autónoma+de+Buenos+Aires,+Argentina',
 	},
 	{
-		name: 'Caballito',
-		address: 'Santiago Collardín 1232, CABA',
+		name: 'CABALLITO',
+		address: 'Doblas 1043, CABA',
+		addressFull: 'Doblas 1043, C1424 Cdad. Autónoma de Buenos Aires, Argentina',
 		image: '/images/erwan-hesry-uJ-OO3aZsSQ-unsplash.jpg',
 		alt: 'Cancha de tenis en Caballito bajo estructura elevada',
+		mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Doblas+1043,+C1424+Cdad.+Autónoma+de+Buenos+Aires,+Argentina',
 	},
 ]
 
 export function Locations() {
 	return (
-		<section id="sedes" className="py-20 lg:py-28 bg-surface-0">
-			<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-				<div className="max-w-5xl mx-auto">
-					<h2 className="heading-uppercase text-brand-500 mb-6 text-center flex items-center justify-center gap-4">
-						<span className="text-3xl">📍</span>
-						<span>NUESTRAS SEDES</span>
-					</h2>
-					<p className="text-center text-xl text-text-700 mb-16 max-w-2xl mx-auto leading-relaxed">
-						Dos sedes especialmente diseñadas para que puedas mejorar tu
-						rendimiento en cada ejercicio, actividad u objetivo que te propongas.
-					</p>
+		<section id="sedes" className="relative bg-surface-950">
+			{/* Línea naranja superior */}
+			<div className="h-1 bg-brand-500" />
+			
+			<div className="py-20 lg:py-28">
+				<div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+					<div className="max-w-5xl mx-auto">
+						{/* Header */}
+						<div className="mb-12 text-center">
+							<h2 className="heading-uppercase text-brand-500 mb-6 flex items-center justify-center gap-4">
+								<span className="text-3xl">📍</span>
+								<span>NUESTRAS SEDES</span>
+							</h2>
+							<p className="text-xl text-text-50 max-w-2xl mx-auto leading-relaxed">
+								Dos sedes especialmente diseñadas para mejorar tu rendimiento en cada ejercicio, actividad u objetivo que te propongas.
+							</p>
+						</div>
 
-					<div className="grid md:grid-cols-2 gap-8">
-						{locations.map((location) => (
-							<div
-								key={location.name}
-								className="bg-surface-0 rounded-2xl overflow-hidden shadow-xl border border-surface-200 hover:shadow-2xl transition-shadow"
-							>
-								<div className="relative h-72">
-									<Image
-										src={location.image}
-										alt={location.alt}
-										fill
-										className="object-cover"
-										sizes="(max-width: 768px) 100vw, 50vw"
-									/>
-								</div>
-								<div className="p-8 text-center">
-									<Button
-										variant="primary"
-										size="md"
-										className="mb-6 rounded-full"
-										href="#contacto"
-									>
-										{location.name}
-									</Button>
-									<div className="flex items-center justify-center gap-2 text-text-700">
-										<svg
-											className="w-5 h-5"
-											fill="none"
-											stroke="currentColor"
-											viewBox="0 0 24 24"
-											aria-hidden="true"
+						{/* Grid de imágenes */}
+						<div className="grid md:grid-cols-2 gap-8">
+							{locations.map((location) => (
+								<div key={location.name} className="flex flex-col">
+									{/* Imagen */}
+									<div className="relative h-72 rounded-2xl overflow-hidden mb-6">
+										<Image
+											src={location.image}
+											alt={location.alt}
+											fill
+											className="object-cover"
+											sizes="(max-width: 768px) 100vw, 50vw"
+										/>
+									</div>
+									
+									{/* Botón con icono */}
+									<div className="flex flex-col items-center gap-3">
+										<a
+											href={location.mapsUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="bg-brand-500 text-text-950 px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
 										>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-											/>
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												strokeWidth={2}
-												d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-											/>
-										</svg>
-										<p className="text-lg font-medium">{location.address}</p>
+											<svg
+												className="w-5 h-5"
+												fill="currentColor"
+												viewBox="0 0 24 24"
+												aria-hidden="true"
+											>
+												<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+											</svg>
+											{location.name}
+										</a>
+										
+										{/* Dirección */}
+										<p className="text-text-50 text-center">
+											{location.address}
+										</p>
 									</div>
 								</div>
-							</div>
-						))}
+							))}
+						</div>
 					</div>
 				</div>
 			</div>
