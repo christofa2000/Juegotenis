@@ -1,238 +1,173 @@
 # .cursorrules
 # ──────────────────────────────────────────────────────────────
-# 🧠 Cursor Development Rules — Christian Oscar Papa (2025)
-# Stack: Next.js 16 • TypeScript • Tailwind v4 • Zustand • React Query
-# Objetivo: Mantener un nivel de excelencia en código, UX, y arquitectura.
+# 🧠 Cursor Development Rules — Landing Tenis (Christian, 2025)
+# Stack: Next.js 16 • TypeScript • Tailwind v4
+# Objetivo: Landing page tenis pixel-perfect, rápida (CWV), accesible, SEO-ready.
 # ──────────────────────────────────────────────────────────────
 
 ## 🧭 Filosofía General
-- Priorizar código limpio, mantenible y escalable.
-- Escribir componentes con intención: menos lógica, más composición.
-- Adoptar el principio **“Code as Craft”** — cada archivo debe ser legible como una historia.
-- Usar **AI como copiloto**, no como sustituto: toda sugerencia generada por IA debe pasar revisión humana.
-- Favorecer patrones funcionales y declarativos (no imperativos).
-- Aplicar “Progressive Enhancement” en todas las vistas públicas.
+- Priorizar simplicidad: landing ≠ dashboard.
+- Pixel-perfect respecto al diseño, pero con criterio responsive.
+- Componentes chicos y reutilizables; evitar páginas con lógica.
+- Mobile-first y accesibilidad desde el inicio.
+- Performance y SEO son features.
 
 ---
 
-## 🧩 Estructura del Proyecto
-- Usar **App Router** con estructura segmentada por propósito:
+## 🧩 Estructura del Proyecto (App Router)
 app/
-(marketing)/
-(dashboard)/
-api/
-lib/
+  (marketing)/
+    page.tsx
+    layout.tsx
+  api/ (solo si hay contacto)
 components/
-hooks/
-stores/
-types/
+  marketing/
+    hero/
+    sections/
+    ui/
+lib/
+  config/
+  seo/
+  utils/
 styles/
+  globals.css
+public/
+  images/
+  fonts/
 
-markdown
-Copiar código
-- Separar lógica de UI, estado y datos.
-- Crear un archivo `/lib/config/site.ts` con metadatos globales (SEO, branding, links).
-- Mantener consistencia en imports: siempre absolutos (`@/components/...`).
-
----
-
-## ⚛️ Reglas React / Next.js
-- Usar **Server Components** por defecto.
-- Aplicar `use client` solo cuando haya:
-- Interactividad UI (onClick, inputs, animaciones)
-- Estado local o global
-- Librerías client-side
-- Usar **metadata dinámica** (`generateMetadata`) para SEO inteligente.
-- Usar **streaming + Suspense boundaries** para optimizar carga inicial.
-- Implementar **error.js**, **loading.js**, y **not-found.js** por ruta.
-- Evitar lógica en componentes de página; delegar a hooks o utils.
+Reglas:
+- Imports absolutos: @/components/...
+- Nada de “mega-components”: dividir por sección.
+- Todo componente UI reutilizable va a components/marketing/ui.
 
 ---
 
-## 🧠 Estado y Datos
-### Local
-- `useState` → estados simples
-- `useReducer` → lógicas complejas
-- `useContext` → solo para temas globales pequeños (Theme, i18n)
-### Global
-- **Zustand**:
-- Crear stores por feature (`useCartStore`, `useAuthStore`, etc.)
-- Usar persistencia solo cuando aporte UX
-- Evitar `any`; tipar con interfaces claras
-- Incluir selectores para rendimiento (`useStore((s) => s.items)`)
-- **React Query**:
-- Server state → `useQuery`, `useMutation`
-- Suspense y prefetch en Server Components
-- Manejo de errores con `onError` y UI amigable (toast, alert)
+## ⚛️ Reglas Next.js / React
+- Server Components por defecto.
+- `use client` SOLO para:
+  - Menú mobile (drawer)
+  - Formularios (contacto)
+  - Animaciones (si se usa Framer Motion)
+- Implementar:
+  - app/(marketing)/loading.tsx (si hay lazy)
+  - app/(marketing)/not-found.tsx
+  - app/(marketing)/error.tsx (si hay fetch/contacto)
+- `generateMetadata` + metadata por defecto en lib/seo.
+
+---
+
+## 🔤 Fonts y Assets
+- Fuentes locales SIEMPRE con `next/font/local`.
+- En `/public/fonts/` guardar:
+  - Lexend-VariableFont_wght.ttf (si aplica)
+- En `/public/images/` guardar:
+  - hero.webp (preferido) + fallback jpg si hace falta
+
+Imágenes:
+- `next/image` para todo lo que sea contenido.
+- Background decorativo: CSS + overlay + `prefers-reduced-motion`.
+
+---
+
+## 🎨 Tailwind v4 / Tokens
+- No hardcodear colores en JSX.
+- Definir tokens en `globals.css` (OKLCH recomendado):
+  - brand (tenis)
+  - surface / muted / text
+  - border / ring
+
+Ejemplo:
+@layer tokens {
+  --brand-500: oklch(70% 0.1 180);
+  --surface-0: oklch(99% 0 0);
+  --text-950: oklch(18% 0.02 270);
+}
+
+- Dark mode: class="dark" + variables.
+- Tipografía: usar variable CSS `--font-lexend`.
 
 ---
 
 ## 🧱 TypeScript
 - `strict: true` obligatorio.
-- No usar `any` ni `unknown` sin justificación en comentario.
-- Inferir tipos de Zod (`z.infer<typeof schema>`).
-- Usar `interface` para estructuras y `type` para combinaciones.
-- Implementar tipos generics y mapped types cuando sean útiles.
-- Exportar tipos compartidos desde `/types/`.
-- Activar `noImplicitReturns`, `noUnusedLocals`, `exactOptionalPropertyTypes`.
+- Prohibido `any`.
+- Props tipadas con interfaces.
+- Reutilizar tipos en /types si aparecen varios.
 
 ---
 
-## 🎨 UI / Tailwind / Diseño
-- Usar **Tailwind v4** con `@layer tokens` y `@theme`:
-- `brand` → #5f8e82 / `brand-600` → #4f786d
-- `neutral`, `accent`, `muted`, `surface`
-- Definir tokens en `globals.css`:
-```css
-@layer tokens {
-  --brand-500: oklch(70% 0.1 180);
-  --neutral-950: oklch(18% 0.02 270);
-}
-Mantener coherencia cromática y contraste AAA.
-
-Preferir diseño mobile-first.
-
-Componentes UI:
-
-Basarse en Shadcn UI + Radix primitives
-
-Añadir microinteracciones con Framer Motion
-
-Animaciones → sutiles, con staggerChildren y easeInOut
-
-No usar colores directos en JSX — usar tokens Tailwind.
-
-Dark mode con class="dark" y variables CSS (--color-text, --color-bg).
-
-🧰 Lógica / Código / Estilo
-Indentación: tabs
-
-Strings: 'single quotes'
-
-No usar ; (excepto en casos ambiguos)
-
-Máx. 100 caracteres por línea
-
-Usar === siempre
-
-Prefijos:
-
-Handlers → handleClick, handleSubmit
-
-Booleans → isOpen, hasError
-
-Hooks → useAuth, useForm
-
-Eliminar variables no usadas
-
-Evitar console.log en producción (usar debug() o logger propio)
-
-Documentar funciones públicas con JSDoc
-
-🔒 Seguridad
-Sanitizar entradas con DOMPurify o validaciones Zod.
-
-Usar next/headers y cookies() en Server Components.
-
-Implementar Content Security Policy en middleware.
-
-No exponer tokens en el cliente.
-
-Deshabilitar dangerouslySetInnerHTML sin limpieza.
-
-🌍 Internacionalización (i18n)
-Usar next-intl o next-i18next.
-
-Evitar strings hardcodeadas — usar useTranslations().
-
-Archivos messages/es.json, messages/en.json, etc.
-
-Añadir fallback locale.
-
-Usar helpers para formato de moneda y fecha (Intl.NumberFormat, Intl.DateTimeFormat).
-
-🧪 Testing
-Unit: Jest + RTL (Arrange–Act–Assert)
-
-Integration: React Testing Library con mocks de API
-
-E2E: Playwright (flows críticos)
-
-Usar data-testid descriptivos
-
-Testear accesibilidad con axe-core
-
-Evitar snapshot testing salvo UI estática
-
-♿ Accesibilidad
-Usar etiquetas semánticas (<main>, <nav>, <section>)
-
-Roles ARIA solo cuando sea necesario
-
-Focus visible siempre
-
-Contraste mínimo 4.5:1
-
-Validar con Lighthouse + axe
-
-Añadir atajos de teclado cuando mejore UX
-
-🚀 Performance
-Activar React Compiler
-
-Evitar useEffect innecesario (usar RSC o memo)
-
-Usar next/image optimizado y priority en hero
-
-Cargar fuentes locales (next/font/local)
-
-Prefetch inteligente con next/link
-
-Medir CWV con Lighthouse y next build --analyze
-
-💾 Error Handling
-Crear error.tsx por segmento
-
-Usar boundaries visuales + feedback claro
-
-Loggear con Sentry o consola de desarrollo
-
-Evitar silencios en errores → siempre informar al usuario
-
-📚 Documentación / AI
-Mantener /docs/architecture.md con decisiones (ADR)
-
-agents.md define estilo de generación IA
-
-Incluir comentario en cada archivo generado por IA:
-
-ts
-Copiar código
-// generated with Cursor + agents.md — reviewed by Christian Oscar Papa
-Usar Markdown con secciones claras, ejemplos y enlaces a doc oficial.
-
-🧠 Commit y Control de Versiones
-Commits semánticos (conventional commits):
-
-feat:, fix:, chore:, refactor:, test:
-
-Cada PR debe incluir descripción y preview (si aplica)
-
-Ignorar report.html, .env.local, .DS_Store
-
-🌌 Nivel de Excelencia
-Antes de hacer merge:
-
- Lint sin errores
-
- Tipado estricto
-
- Accesibilidad AA/AAA
-
- Performance >90 (Lighthouse)
-
- Documentación mínima actualizada
-
- Pruebas críticas corriendo
-
-Si no alcanza excelencia, no se mergea.
+## 🧠 Secciones típicas (Landing Tenis)
+El layout se arma en este orden (si el diseño lo indica):
+- Header (logo + nav + CTA)
+- Hero (headline + sub + CTA + imagen)
+- Beneficios (3–6 cards)
+- Servicios/Clases (grilla)
+- Testimonios (opcional)
+- Pricing (opcional)
+- FAQ (acordeón)
+- Contacto (form + datos)
+- Footer (links + redes)
+
+Reglas:
+- Cada sección = 1 componente en components/marketing/sections/*
+- UI shared (Button, Badge, Card) en components/marketing/ui/*
+
+---
+
+## ♿ Accesibilidad
+- Semántica: <header>, <main>, <section>, <footer>.
+- Botones reales para acciones, links reales para navegación.
+- Focus visible siempre.
+- Contraste mínimo 4.5:1 (ideal AAA).
+- Respetar `prefers-reduced-motion`.
+
+---
+
+## 🚀 Performance (CWV)
+- Hero image: `priority`.
+- Evitar librerías pesadas si no suman.
+- Animaciones sutiles; nada de scroll-jank.
+- `next/image` + formatos WebP/AVIF.
+- Minimizar JS en cliente: menú mobile simple.
+
+---
+
+## 🔍 SEO
+- `generateMetadata` por route.
+- OpenGraph + Twitter cards.
+- JSON-LD si corresponde (LocalBusiness/Organization).
+- Headings correctos: 1 h1 por página.
+- Alt text descriptivo (no “imagen1”).
+
+---
+
+## 🧰 Estilo / Código
+- Indentación: tabs
+- Strings: 'single quotes'
+- Sin `;` (salvo casos ambiguos)
+- Máx 100 chars por línea
+- Sin console.log en prod
+- Nombres:
+  - handlers: handleSubmit
+  - booleans: isOpen / hasScrolled
+  - components: PascalCase
+- Cada archivo generado por IA:
+  // generated with Cursor — reviewed by Christian Oscar Papa
+
+---
+
+## 🧪 Testing (solo si el proyecto lo pide)
+- Unit mínimo para helpers (lib/utils).
+- E2E (Playwright) para:
+  - navegación
+  - submit de contacto (si existe)
+
+---
+
+## ✅ Definition of Done
+Antes de merge:
+- Lighthouse: Performance > 90
+- A11y: > 95
+- No TS errors / no lint errors
+- Responsive OK: 360 / 768 / 1024 / 1440
+- Imágenes optimizadas + fonts locales
