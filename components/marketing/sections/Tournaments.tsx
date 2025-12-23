@@ -6,14 +6,14 @@ export function Tournaments() {
   return (
     <section id="torneos" className="bg-surface-0 relative">
       {/* Sección superior con imagen de fondo */}
-      <div className="relative min-h-[70vh] overflow-visible bg-surface-950">
+      <div className="relative min-h-[70vh] overflow-visible">
         {/* Imagen de fondo */}
         <Image
           src="/images/torneos.jpg"
           alt="Cancha de tenis con zapatillas, raqueta y pelota"
           fill
           priority
-          className="object-contain object-center"
+          className="object-cover"
           sizes="100vw"
         />
         {/* Overlay oscuro */}
