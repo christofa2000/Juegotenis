@@ -36,7 +36,7 @@ export function About() {
 							disfrute del tenis.
 						</p>
 					</div>
-					<Button href="#contacto" variant="primary" size="lg">
+					<Button href="#contacto" variant="primary">
 						RESERVÁ TU CLASE DE PRUEBA
 					</Button>
 				</div>

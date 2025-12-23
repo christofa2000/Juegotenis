@@ -17,8 +17,9 @@ export function FinalCTA() {
 						<Button
 							href="https://wa.me/5491123110735"
 							variant="whatsapp"
-							size="lg"
 							className="flex items-center justify-center gap-3 mx-auto"
+							target="_blank"
+							rel="noopener noreferrer"
 						>
 							<svg
 								className="w-7 h-7"

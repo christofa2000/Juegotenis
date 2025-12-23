@@ -60,26 +60,9 @@ export function ClassesCard({
 
         {/* Renglones de metadatos */}
         {type === "adults" ? (
-          /* Para adultos, mostrar el contenido expandido directamente con sus propios botones */
+          /* Para adultos, mostrar siempre el contenido expandido */
           <div className="mb-6">
-            {isExpanded && expandedContent ? (
-              <div>{expandedContent}</div>
-            ) : (
-              <button
-                type="button"
-                onClick={() => onRowClick(type, "details")}
-                className="w-full flex items-center justify-between py-3 px-4 bg-surface-100 rounded-lg hover:bg-surface-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
-                aria-expanded={false}
-                aria-label="Mostrar detalles de clases para adultos"
-              >
-                <span className="eyebrow text-text-800 font-semibold">
-                  VER DETALLES
-                </span>
-                <span className="text-2xl font-bold text-brand-600 w-8 h-8 flex items-center justify-center">
-                  +
-                </span>
-              </button>
-            )}
+            {expandedContent && <div>{expandedContent}</div>}
           </div>
         ) : (
           /* Para niños, mostrar botones individuales */
@@ -92,10 +75,12 @@ export function ClassesCard({
                   <button
                     type="button"
                     onClick={() => onRowClick(type, row.key)}
-                    className="w-full flex items-center justify-between py-3 px-4 bg-surface-100 rounded-lg hover:bg-surface-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+                    className="w-full flex items-center justify-between py-3 px-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
                     aria-expanded={isExpanded}
                     aria-label={
-                      isExpanded ? `Ocultar ${row.label}` : `Mostrar ${row.label}`
+                      isExpanded
+                        ? `Ocultar ${row.label}`
+                        : `Mostrar ${row.label}`
                     }
                   >
                     <span className="eyebrow text-text-800 font-semibold">
@@ -107,7 +92,7 @@ export function ClassesCard({
                   </button>
                   {/* Contenido expandido debajo del renglón */}
                   {isExpanded && expandedContent && (
-                    <div className="mt-3 px-4 pb-4">{expandedContent}</div>
+                    <div className="mt-4">{expandedContent}</div>
                   )}
                 </div>
               );
@@ -116,9 +101,11 @@ export function ClassesCard({
         )}
 
         {/* Botón CTA */}
-        <Button href="#contacto" variant="primary" size="md" className="w-full">
-          RESERVÁ TU CLASE DE PRUEBA
-        </Button>
+        <div className="flex justify-center">
+          <Button href="#contacto" variant="primary">
+            RESERVÁ TU CLASE DE PRUEBA
+          </Button>
+        </div>
       </div>
     </div>
   );

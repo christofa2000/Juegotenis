@@ -39,11 +39,7 @@ export function Classes() {
           activeCard={activeCard}
           onRowClick={handleRowClick}
           isPreview={false}
-          expandedContent={
-            activeCard === "adults" && isExpanded ? (
-              <AdultsExpanded />
-            ) : undefined
-          }
+          expandedContent={<AdultsExpanded />}
         />
 
         <ClassesCard

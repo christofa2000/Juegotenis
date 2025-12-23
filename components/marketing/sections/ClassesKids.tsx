@@ -47,14 +47,11 @@ export function KidsDetail() {
 					{playStayCourts.map((court) => (
 						<div
 							key={court.color}
-							className="bg-surface-0 p-8 rounded-xl shadow-lg border-l-4 border-surface-200"
-							style={{
-								borderLeftColor: `var(--color-${court.colorToken})`,
-							}}
+							className="p-8"
 						>
 							<div className="flex items-center gap-4 mb-4">
 								<div
-									className="w-8 h-8 rounded-full shadow-sm"
+									className="w-8 h-8 rounded-full"
 									style={{
 										backgroundColor: `var(--color-${court.colorToken})`,
 									}}
@@ -72,7 +69,7 @@ export function KidsDetail() {
 			</div>
 
 			<div className="text-center">
-				<Button href="#contacto" variant="primary" size="lg">
+				<Button href="#contacto" variant="primary">
 					RESERVÁ TU CLASE DE PRUEBA
 				</Button>
 			</div>

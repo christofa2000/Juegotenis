@@ -15,16 +15,15 @@ export function Hero() {
 			/>
 			<div className="absolute inset-0 bg-gradient-to-b from-surface-950/50 via-surface-950/40 to-surface-950/60" />
 			<div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
-				<h1 className="heading-hero mb-12">
-					<span className="text-text-50 drop-shadow-2xl">SOMOS </span>
-					<span className="text-brand-500 drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-						JuegoTenis
-					</span>
-				</h1>
-				<div className="mt-12">
-					<Button href="#contacto" variant="primary" size="lg">
-						RESERVÁ TU CLASE DE PRUEBA
-					</Button>
+				<div className="relative w-full max-w-4xl mx-auto aspect-[4/1]">
+					<Image
+						src="/images/SOMOS-JUEGOTENIS.png"
+						alt="SOMOS JuegoTenis"
+						fill
+						className="object-contain drop-shadow-2xl"
+						sizes="(max-width: 768px) 90vw, 800px"
+						priority
+					/>
 				</div>
 			</div>
 		</section>

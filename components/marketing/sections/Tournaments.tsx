@@ -30,7 +30,7 @@ export function Tournaments() {
 						jugador que sos. Jugando y seguir creciendo, tenemos propuestas para
 						todos los niveles.
 					</p>
-					<Button href="#contacto" variant="primary" size="lg">
+					<Button href="#contacto" variant="primary">
 						RESERVÁ TU CLASE DE PRUEBA
 					</Button>
 				</div>

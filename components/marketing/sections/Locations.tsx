@@ -1,12 +1,13 @@
 // generated with Cursor — reviewed by Christian Oscar Papa
 import Image from 'next/image'
+import { Button } from '@/components/marketing/ui/Button'
 
 const locations = [
 	{
 		name: 'NÚÑEZ',
 		address: 'Santiago Calzadilla 1350, CABA',
 		addressFull: 'Santiago Calzadilla 1350, C1429AAH Cdad. Autónoma de Buenos Aires, Argentina',
-		image: '/images/young-couple-playing-tennis-court.jpg',
+		image: '/images/nuñez.jpg',
 		alt: 'Cancha de tenis en Núñez con jugadores',
 		mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Santiago+Calzadilla+1350,+C1429AAH+Cdad.+Autónoma+de+Buenos+Aires,+Argentina',
 	},
@@ -14,7 +15,7 @@ const locations = [
 		name: 'CABALLITO',
 		address: 'Doblas 1043, CABA',
 		addressFull: 'Doblas 1043, C1424 Cdad. Autónoma de Buenos Aires, Argentina',
-		image: '/images/erwan-hesry-uJ-OO3aZsSQ-unsplash.jpg',
+		image: '/images/doblas.jpg',
 		alt: 'Cancha de tenis en Caballito bajo estructura elevada',
 		mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Doblas+1043,+C1424+Cdad.+Autónoma+de+Buenos+Aires,+Argentina',
 	},
@@ -57,11 +58,12 @@ export function Locations() {
 									
 									{/* Botón con icono */}
 									<div className="flex flex-col items-center gap-3">
-										<a
+										<Button
 											href={location.mapsUrl}
+											variant="primary"
 											target="_blank"
 											rel="noopener noreferrer"
-											className="bg-brand-500 text-text-950 px-6 py-3 rounded-lg font-semibold flex items-center gap-2 hover:bg-brand-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300"
+											className="flex items-center gap-2"
 										>
 											<svg
 												className="w-5 h-5"
@@ -72,7 +74,7 @@ export function Locations() {
 												<path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
 											</svg>
 											{location.name}
-										</a>
+										</Button>
 										
 										{/* Dirección */}
 										<p className="text-text-50 text-center">

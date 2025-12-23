@@ -7,19 +7,28 @@ import { useEffect, useState } from "react";
 
 export function Header() {
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setHasScrolled(window.scrollY > 50);
+      const y = window.scrollY;
+
+      setHasScrolled(y > 50);
+
+      // 👇 si baja más de 80px, desaparece (sin animación)
+      setIsHidden(y > 80);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // set inicial por si carga scrolleado
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  if (isHidden) return null;
+
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+      className={`fixed top-0 z-50 w-full ${
         hasScrolled
           ? "bg-surface-950/90 backdrop-blur-md border-b border-surface-800/40"
           : "bg-transparent"
@@ -49,30 +58,25 @@ export function Header() {
             href="/"
             className="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-full"
           >
-            <div className="relative h-12 w-12">
+            <div className="relative h-20 w-20">
               <Image
-                src="/images/LOGO.jpg"
+                src="/images/logo-blanco.webp"
                 alt="JuegoTenis"
                 fill
                 className="object-contain rounded-full"
-                sizes="48px"
+                sizes="80px"
                 priority
               />
             </div>
           </Link>
 
-          {/* CTA WhatsApp derecha */}
+          {/* CTA WhatsApp derecha (INTACTO) */}
           <div className="hidden md:flex items-center justify-end">
             <a
               href="https://wa.me/549XXXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className={`px-5 py-2 text-sm font-semibold uppercase tracking-wide transition-all
-								rounded-full border-2 ${
-                  hasScrolled
-                    ? "border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white"
-                    : "border-brand-400 text-brand-400 hover:bg-brand-500 hover:text-white drop-shadow-lg"
-                }`}
+              className="px-5 py-2 text-sm font-semibold uppercase tracking-wide transition-all rounded-full border-2 bg-brand-500 text-white border-brand-500 hover:bg-brand-600 hover:border-brand-600 drop-shadow-lg"
             >
               Reservá tu turno
             </a>

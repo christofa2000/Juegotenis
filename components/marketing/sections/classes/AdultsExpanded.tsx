@@ -25,7 +25,7 @@ export function AdultsExpanded() {
         <button
           type="button"
           onClick={() => handleToggle("modalidad")}
-          className="w-full flex items-center justify-between py-3 px-4 bg-surface-100 rounded-lg hover:bg-surface-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+          className="w-full flex items-center justify-between py-3 px-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
           aria-expanded={isModalidadOpen}
           aria-controls={modalidadId}
         >
@@ -41,7 +41,7 @@ export function AdultsExpanded() {
         {isModalidadOpen && (
           <div
             id={modalidadId}
-            className="mt-3 px-5 py-4 bg-surface-50 rounded-lg border border-surface-200"
+            className="mt-4"
           >
             <ul className="space-y-4 text-text-700">
               <li className="flex items-start gap-3">
@@ -85,7 +85,7 @@ export function AdultsExpanded() {
         <button
           type="button"
           onClick={() => handleToggle("niveles")}
-          className="w-full flex items-center justify-between py-3 px-4 bg-surface-100 rounded-lg hover:bg-surface-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+          className="w-full flex items-center justify-between py-3 px-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
           aria-expanded={isNivelesOpen}
           aria-controls={nivelesId}
         >
@@ -101,7 +101,7 @@ export function AdultsExpanded() {
         {isNivelesOpen && (
           <div
             id={nivelesId}
-            className="mt-3 px-5 py-4 bg-surface-50 rounded-lg border border-surface-200"
+            className="mt-4"
           >
             <ul className="space-y-2 text-text-700">
               {[
