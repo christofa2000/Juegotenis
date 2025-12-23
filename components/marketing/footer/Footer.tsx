@@ -1,6 +1,6 @@
 // generated with Cursor — reviewed by Christian Oscar Papa
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (

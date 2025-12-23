@@ -39,10 +39,7 @@ export function AdultsExpanded() {
         </button>
 
         {isModalidadOpen && (
-          <div
-            id={modalidadId}
-            className="mt-4"
-          >
+          <div id={modalidadId} className="mt-4">
             <ul className="space-y-4 text-text-700">
               <li className="flex items-start gap-3">
                 <span className="mt-1 text-brand-600 text-base leading-none">
@@ -99,10 +96,7 @@ export function AdultsExpanded() {
         </button>
 
         {isNivelesOpen && (
-          <div
-            id={nivelesId}
-            className="mt-4"
-          >
+          <div id={nivelesId} className="mt-4">
             <ul className="space-y-2 text-text-700">
               {[
                 "Inicial",
