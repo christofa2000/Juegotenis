@@ -25,7 +25,7 @@ export function AdultsExpanded() {
         <button
           type="button"
           onClick={() => handleToggle("modalidad")}
-          className="w-full flex items-center justify-between py-3 px-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+          className="w-full flex items-center justify-center gap-2 py-3 px-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
           aria-expanded={isModalidadOpen}
           aria-controls={modalidadId}
         >
@@ -82,7 +82,7 @@ export function AdultsExpanded() {
         <button
           type="button"
           onClick={() => handleToggle("niveles")}
-          className="w-full flex items-center justify-between py-3 px-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+          className="w-full flex items-center justify-center gap-2 py-3 px-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
           aria-expanded={isNivelesOpen}
           aria-controls={nivelesId}
         >

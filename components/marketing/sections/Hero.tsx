@@ -12,7 +12,7 @@ export function Hero() {
         className="object-cover"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-surface-950/50 via-surface-950/40 to-surface-950/60" />
+
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
         <div className="relative w-full max-w-4xl mx-auto aspect-[4/1]">
           <Image

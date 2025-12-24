@@ -26,31 +26,29 @@ const locations = [
 
 export function Locations() {
   return (
-    <section id="sedes" className="relative bg-surface-950">
-      {/* Línea naranja superior */}
-      <div className="h-1 bg-brand-500" />
-
+    <section id="sedes" className="relative bg-surface-900">
       <div className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             {/* Header */}
             <div className="mb-12 text-center">
-              <h2 className="heading-uppercase text-brand-500 mb-6 flex items-center justify-center gap-4">
+              <h2 className="heading-uppercase mb-6 flex items-center justify-center gap-4">
                 <span className="text-3xl">📍</span>
-                <span>NUESTRAS SEDES</span>
+                <span className="text-text-50">NUESTRAS</span>
+                <span className="text-brand-500">SEDES</span>
               </h2>
-              <p className="text-xl text-text-50 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base text-text-50 max-w-2xl mx-auto leading-relaxed">
                 Dos sedes especialmente diseñadas para mejorar tu rendimiento en
                 cada ejercicio, actividad u objetivo que te propongas.
               </p>
             </div>
 
             {/* Grid de imágenes */}
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-16 lg:gap-20">
               {locations.map((location) => (
                 <div key={location.name} className="flex flex-col">
                   {/* Imagen */}
-                  <div className="relative h-72 rounded-2xl overflow-hidden mb-6">
+                  <div className="relative h-[320px] w-full rounded-[4rem] overflow-hidden mb-6">
                     <Image
                       src={location.image}
                       alt={location.alt}
@@ -67,7 +65,7 @@ export function Locations() {
                       variant="primary"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2"
+                      className="flex items-center gap-2 text-base px-6 py-3 !text-text-950 font-black"
                     >
                       <svg
                         className="w-5 h-5"
@@ -81,7 +79,7 @@ export function Locations() {
                     </Button>
 
                     {/* Dirección */}
-                    <p className="text-text-50 text-center">
+                    <p className="text-text-50 text-center text-sm">
                       {location.address}
                     </p>
                   </div>

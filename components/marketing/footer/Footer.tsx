@@ -5,8 +5,8 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer>
-      {/* Sección inferior naranja */}
-      <div className="bg-brand-500 py-8">
+      {/* Sección inferior naranja con degradado */}
+      <div className="bg-gradient-to-r from-brand-400 to-brand-500 py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Logo */}

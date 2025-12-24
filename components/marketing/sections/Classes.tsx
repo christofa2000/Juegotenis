@@ -29,7 +29,7 @@ export function Classes() {
 
   return (
     <section id="clases" className="bg-surface-0">
-      <div className="grid md:grid-cols-2">
+      <div className="grid md:grid-cols-2 items-stretch">
         <ClassesCard
           type="adults"
           title="ADULTOS"

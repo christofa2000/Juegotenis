@@ -35,7 +35,7 @@ export function ClassesCard({
   const rows = type === "kids" ? kidsRows : [];
 
   return (
-    <div className="bg-surface-0">
+    <div className="bg-surface-0 flex flex-col h-full">
       {/* Imagen con overlay y título */}
       <div className="relative h-[300px] lg:h-[350px]">
         <Image
@@ -54,19 +54,19 @@ export function ClassesCard({
       </div>
 
       {/* Cuerpo de la card */}
-      <div className="p-6 lg:p-8 container mx-auto max-w-2xl">
+      <div className="p-6 lg:p-8 container mx-auto max-w-2xl flex flex-col grow">
         {/* Descripción */}
         <p className="text-text-700 mb-6 leading-relaxed">{description}</p>
 
         {/* Renglones de metadatos */}
         {type === "adults" ? (
           /* Para adultos, mostrar siempre el contenido expandido */
-          <div className="mb-6">
+          <div className="mb-6 grow">
             {expandedContent && <div>{expandedContent}</div>}
           </div>
         ) : (
           /* Para niños, mostrar botones individuales */
-          <div className="space-y-3 mb-6">
+          <div className="space-y-3 mb-6 grow">
             {rows.map((row) => {
               const icon = isExpanded ? "−" : "+";
 
@@ -75,7 +75,7 @@ export function ClassesCard({
                   <button
                     type="button"
                     onClick={() => onRowClick(type, row.key)}
-                    className="w-full flex items-center justify-between py-3 px-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
+                    className="w-full flex items-center justify-center gap-2 py-3 px-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2"
                     aria-expanded={isExpanded}
                     aria-label={
                       isExpanded
@@ -100,8 +100,8 @@ export function ClassesCard({
           </div>
         )}
 
-        {/* Botón CTA */}
-        <div className="flex justify-center">
+        {/* Botón CTA - siempre al final */}
+        <div className="flex justify-center mt-auto">
           <Button href="#contacto" variant="primary">
             RESERVÁ TU CLASE DE PRUEBA
           </Button>
