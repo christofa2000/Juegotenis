@@ -5,11 +5,11 @@ export function Hero() {
   return (
     <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       <Image
-        src="/images/view-tennis-racket-hitting-ball.jpg"
+        src="/images/hero.jpg"
         alt="Jugador de tenis golpeando la pelota en acción"
         fill
         priority
-        className="object-cover"
+        className="object-cover object-[80%_20%]"
         sizes="100vw"
       />
 
