@@ -4,10 +4,12 @@ import Image from "next/image";
 
 export function Tournaments() {
   return (
-    <section id="torneos" className="bg-surface-0 relative scroll-mt-20">
-      {/* Sección superior con imagen de fondo */}
-      <div className="relative min-h-[70vh] overflow-visible">
-        {/* Imagen de fondo */}
+    <section
+      id="torneos"
+      className="relative h-[100dvh] overflow-hidden scroll-mt-20 grid grid-rows-[30dvh_1fr] min-h-0"
+    >
+      {/* Fila 1: Banner superior con imagen */}
+      <div className="relative min-h-0">
         <Image
           src="/images/torneos.jpg"
           alt="Cancha de tenis con zapatillas, raqueta y pelota"
@@ -18,36 +20,36 @@ export function Tournaments() {
         />
         {/* Overlay oscuro */}
         <div className="absolute inset-0 bg-gradient-to-b from-surface-950/25 via-surface-950/20 to-surface-950/30" />
+      </div>
 
-        {/* Logo NUESTROS TORNEOS posicionado en el borde (más grande y más arriba) */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[35%] w-full z-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <div className="relative w-full max-w-7xl mx-auto aspect-[3/1] lg:aspect-[4/1]">
-              <Image
-                src="/images/NUESTROS-TORNEOS.png"
-                alt="Nuestros Torneos"
-                fill
-                className="object-contain drop-shadow-2xl"
-                sizes="(max-width: 768px) 90vw, 1400px"
-                priority
-              />
-            </div>
+      {/* Logo NUESTROS TORNEOS en el medio entre banner y bloque blanco */}
+      <div className="absolute top-[30dvh] left-1/2 -translate-x-1/2 -translate-y-[60%] z-20 w-full">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="relative w-full max-w-6xl lg:max-w-7xl mx-auto aspect-[3/1] lg:aspect-[4/1] h-[180px] lg:h-[240px] xl:h-[260px]">
+            <Image
+              src="/images/NUESTROS-TORNEOS.png"
+              alt="Nuestros Torneos"
+              fill
+              className="object-contain drop-shadow-2xl"
+              sizes="(max-width: 768px) 90vw, 1400px"
+              priority
+            />
           </div>
         </div>
       </div>
 
-      {/* Contenido inferior sobre fondo blanco */}
-      <div className="bg-surface-0 pt-32 pb-16 lg:pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+      {/* Fila 2: Bloque blanco inferior con contenido */}
+      <div className="bg-surface-0 min-h-0 overflow-y-auto">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-full flex flex-col justify-center py-4 lg:py-6">
           {/* Título */}
-          <h2 className="heading-section mb-12 text-center">
+          <h2 className="text-xl lg:text-2xl xl:text-3xl font-bold mb-4 lg:mb-6 text-center">
             <span className="text-text-950">VIVÍ LA EMOCIÓN DE </span>
             <span className="text-brand-500">COMPETIR</span>
           </h2>
 
           {/* Texto en dos columnas */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12 max-w-5xl mx-auto">
-            <div className="space-y-6 text-text-700 text-lg leading-relaxed">
+          <div className="grid md:grid-cols-2 gap-4 lg:gap-6 mb-4 lg:mb-6 max-w-5xl mx-auto">
+            <div className="space-y-3 lg:space-y-4 text-text-700 text-sm lg:text-base leading-relaxed">
               <p>
                 En JuegoTenis organizamos encuentros y torneos amateurs donde
                 cada partido es una oportunidad para superarte.
@@ -58,7 +60,7 @@ export function Tournaments() {
                 propuestas para todos los niveles.
               </p>
             </div>
-            <div className="space-y-6 text-text-700 text-lg leading-relaxed">
+            <div className="space-y-3 lg:space-y-4 text-text-700 text-sm lg:text-base leading-relaxed">
               <p>
                 Ofrecemos categorías por nivel, partidos dinámicos y un ambiente
                 donde prima el disfrute, el aprendizaje y el espíritu deportivo.
@@ -78,6 +80,7 @@ export function Tournaments() {
               variant="primary"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-xs lg:text-sm px-4 py-2"
             >
               RESERVA TU CLASE DE PRUEBA
             </Button>

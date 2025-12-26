@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
       <Image
         src="/images/hero.jpg"
         alt="Jugador de tenis golpeando la pelota en acción"
