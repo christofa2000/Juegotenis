@@ -6,18 +6,32 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function Header() {
-  const [hasScrolled, setHasScrolled] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
     const handleScroll = () => {
       const y = window.scrollY;
 
-      setHasScrolled(y > 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Ocultar al bajar, mostrar al subir
+          if (y > 50 && y > lastScrollY) {
+            // Scrolling down
+            setIsHidden(true);
+          } else if (y < lastScrollY || y <= 50) {
+            // Scrolling up o cerca del top
+            setIsHidden(false);
+          }
 
-      // 👇 si baja más de 80px, desaparece (sin animación)
-      setIsHidden(y > 80);
+          lastScrollY = y;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -42,17 +56,13 @@ export function Header() {
     };
   }, [isMenuOpen]);
 
-  if (isHidden) return null;
-
   const navItems = ["clases", "torneos", "quienes-somos", "sedes"];
 
   return (
     <>
       <header
-        className={`fixed top-0 z-50 w-full ${
-          hasScrolled
-            ? "bg-surface-950/90 backdrop-blur-md border-b border-surface-800/40"
-            : "bg-transparent"
+        className={`fixed top-0 z-50 w-full bg-transparent transition-transform duration-300 ease-in-out ${
+          isHidden ? "-translate-y-full" : "translate-y-0"
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -88,11 +98,7 @@ export function Header() {
                 <Link
                   key={item}
                   href={`#${item}`}
-                  className={`text-sm font-medium uppercase tracking-wide transition-colors ${
-                    hasScrolled
-                      ? "text-text-100 hover:text-brand-300"
-                      : "text-text-50 hover:text-brand-300 drop-shadow-md"
-                  }`}
+                  className="text-sm font-medium uppercase tracking-wide text-text-50 hover:text-brand-300 drop-shadow-md transition-colors"
                 >
                   {item.replace("-", " ")}
                 </Link>
@@ -135,15 +141,15 @@ export function Header() {
       {/* Menú móvil overlay */}
       {isMenuOpen && (
         <>
-          {/* Overlay oscuro */}
+          {/* Overlay transparente */}
           <div
-            className="fixed inset-0 bg-surface-950/80 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-transparent z-40 md:hidden"
             onClick={() => setIsMenuOpen(false)}
             aria-hidden="true"
           />
           {/* Menú drawer */}
           <nav
-            className="fixed top-20 left-0 right-0 bg-surface-950/95 backdrop-blur-md z-40 md:hidden border-b border-surface-800/40"
+            className="fixed top-20 left-0 right-0 bg-transparent z-40 md:hidden"
             aria-label="Navegación móvil"
           >
             <div className="container mx-auto px-4 py-6">
@@ -153,7 +159,7 @@ export function Header() {
                     key={item}
                     href={`#${item}`}
                     onClick={handleLinkClick}
-                    className="text-base font-medium uppercase tracking-wide text-text-100 hover:text-brand-300 transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
+                    className="text-base font-medium uppercase tracking-wide text-text-50 hover:text-brand-300 drop-shadow-md transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
                   >
                     {item.replace("-", " ")}
                   </Link>
