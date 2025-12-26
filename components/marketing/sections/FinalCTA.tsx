@@ -37,7 +37,7 @@ export function FinalCTA() {
           <p className="text-base text-text-700 mb-24 lg:mb-32 leading-relaxed">
             Escribinos por WhatsApp y reservá tu turno.
           </p>
-          <div className="flex items-start justify-between gap-4 mb-0 flex-wrap max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between gap-8 md:gap-4 mb-0 max-w-4xl mx-auto">
             <div className="flex flex-col items-center text-text-600">
               <svg
                 className="w-6 h-6 mb-2"
