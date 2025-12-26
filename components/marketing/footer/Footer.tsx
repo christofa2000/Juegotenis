@@ -8,7 +8,7 @@ export function Footer() {
       {/* Sección inferior naranja con degradado */}
       <div className="bg-gradient-to-r from-brand-400 to-brand-500 py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col md:flex-row items-center gap-8">
             {/* Logo */}
             <Link
               href="/"
@@ -26,7 +26,7 @@ export function Footer() {
             </Link>
 
             {/* Navegación */}
-            <nav className="flex flex-wrap items-center justify-center gap-6">
+            <nav className="flex flex-wrap items-center gap-6 flex-1">
               <Link
                 href="#clases"
                 className="text-white uppercase text-sm font-medium hover:text-brand-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500"
@@ -54,7 +54,7 @@ export function Footer() {
             </nav>
 
             {/* Copyright */}
-            <p className="text-white text-sm">
+            <p className="text-white text-sm ml-auto">
               © 2025 JuegoTenis. Todos los derechos reservados.
             </p>
           </div>

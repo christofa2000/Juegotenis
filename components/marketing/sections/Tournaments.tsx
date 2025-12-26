@@ -17,7 +17,7 @@ export function Tournaments() {
           sizes="100vw"
         />
         {/* Overlay oscuro */}
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-950/50 via-surface-950/40 to-surface-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-950/25 via-surface-950/20 to-surface-950/30" />
 
         {/* Logo NUESTROS TORNEOS posicionado en el borde (más grande y más arriba) */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[35%] w-full z-20">

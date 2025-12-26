@@ -46,7 +46,7 @@ export function ClassesCard({
           sizes="(max-width: 768px) 100vw, 50vw"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-950/60 via-surface-950/50 to-surface-950/70 flex items-center justify-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-950/30 via-surface-950/25 to-surface-950/35 flex items-center justify-center">
           <h2 className="heading-uppercase text-text-50 drop-shadow-2xl text-center px-4">
             {title}
           </h2>
@@ -102,7 +102,12 @@ export function ClassesCard({
 
         {/* Botón CTA - siempre al final */}
         <div className="flex justify-center mt-auto">
-          <Button href="#contacto" variant="primary">
+          <Button
+            href="https://wa.me/5491123110735"
+            variant="primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             RESERVÁ TU CLASE DE PRUEBA
           </Button>
         </div>

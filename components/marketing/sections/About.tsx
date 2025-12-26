@@ -15,8 +15,9 @@ export function About() {
         fill
         className="object-cover"
         sizes="100vw"
-        priority
       />
+      {/* Overlay oscuro */}
+      <div className="absolute inset-0 bg-surface-950/70" />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Título centrado arriba */}
@@ -60,7 +61,12 @@ export function About() {
               </p>
             </div>
             <div className="flex justify-center">
-              <Button href="#contacto" variant="primary">
+              <Button
+                href="https://wa.me/5491123110735"
+                variant="primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 RESERVÁ TU CLASE DE PRUEBA
               </Button>
             </div>
