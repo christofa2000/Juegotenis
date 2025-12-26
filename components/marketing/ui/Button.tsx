@@ -39,6 +39,24 @@ export function Button({
   const combinedClassName = `${baseStyles} ${variants[variant]} ${className}`;
 
   if (href) {
+    // Para enlaces externos (http/https), usar <a> directamente
+    const isExternal = href.startsWith("http://") || href.startsWith("https://");
+    
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          className={combinedClassName}
+          target={target || "_blank"}
+          rel={rel || "noopener noreferrer"}
+          aria-label={typeof children === "string" ? children : undefined}
+        >
+          {children}
+        </a>
+      );
+    }
+
+    // Para enlaces internos, usar Next Link
     return (
       <Link
         href={href}

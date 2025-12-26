@@ -6,7 +6,7 @@ export function About() {
   return (
     <section
       id="quienes-somos"
-      className="relative py-20 lg:py-32 overflow-hidden"
+      className="relative py-20 lg:py-32 overflow-hidden scroll-mt-20"
     >
       {/* Imagen de fondo */}
       <Image

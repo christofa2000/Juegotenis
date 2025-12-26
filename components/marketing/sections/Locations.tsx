@@ -26,7 +26,7 @@ const locations = [
 
 export function Locations() {
   return (
-    <section id="sedes" className="relative bg-surface-900">
+    <section id="sedes" className="relative bg-surface-900 scroll-mt-20">
       <div className="py-20 lg:py-28">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-7xl mx-auto">

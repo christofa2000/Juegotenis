@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function Tournaments() {
   return (
-    <section id="torneos" className="bg-surface-0 relative">
+    <section id="torneos" className="bg-surface-0 relative scroll-mt-20">
       {/* Sección superior con imagen de fondo */}
       <div className="relative min-h-[70vh] overflow-visible">
         {/* Imagen de fondo */}
@@ -73,7 +73,12 @@ export function Tournaments() {
 
           {/* Botón CTA */}
           <div className="flex justify-center">
-            <Button href="#contacto" variant="primary">
+            <Button
+              href="https://wa.me/5491123110735"
+              variant="primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               RESERVA TU CLASE DE PRUEBA
             </Button>
           </div>
