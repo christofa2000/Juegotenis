@@ -40,7 +40,7 @@ export function Tournaments() {
 
       {/* Fila 2: Bloque blanco inferior con contenido */}
       <div className="bg-surface-0 min-h-0 overflow-y-auto">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-full flex flex-col justify-center py-4 lg:py-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-full flex flex-col justify-center pt-12 lg:pt-16 xl:pt-20 pb-4 lg:pb-6">
           {/* Título */}
           <h2 className="text-xl lg:text-2xl xl:text-3xl font-bold mb-4 lg:mb-6 text-center">
             <span className="text-text-950">VIVÍ LA EMOCIÓN DE </span>

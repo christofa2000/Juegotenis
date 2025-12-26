@@ -5,7 +5,10 @@ import { SiTiktok } from "react-icons/si";
 
 export function FinalCTA() {
   return (
-    <section id="contacto" className="py-20 lg:py-32 bg-surface-0 scroll-mt-20">
+    <section
+      id="contacto"
+      className="pt-12 lg:pt-16 pb-8 lg:pb-12 bg-surface-0 scroll-mt-20"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="heading-section mb-12">
@@ -31,10 +34,10 @@ export function FinalCTA() {
               ESCRIBINOS POR WHATSAPP
             </Button>
           </div>
-          <p className="text-base text-text-700 mb-12 leading-relaxed">
+          <p className="text-base text-text-700 mb-24 lg:mb-32 leading-relaxed">
             Escribinos por WhatsApp y reservá tu turno.
           </p>
-          <div className="flex items-start justify-between gap-4 mb-12 flex-wrap max-w-4xl mx-auto">
+          <div className="flex items-start justify-between gap-4 mb-0 flex-wrap max-w-4xl mx-auto">
             <div className="flex flex-col items-center text-text-600">
               <svg
                 className="w-6 h-6 mb-2"
