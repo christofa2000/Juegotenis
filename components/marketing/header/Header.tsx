@@ -98,9 +98,10 @@ export function Header() {
                 <Link
                   key={item}
                   href={`#${item}`}
-                  className="text-sm font-medium uppercase tracking-wide text-text-50 hover:text-brand-300 drop-shadow-md transition-colors"
+                  className="relative text-sm font-medium uppercase tracking-wide text-text-50 hover:text-brand-300 drop-shadow-md transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded px-1 py-1 group"
                 >
-                  {item.replace("-", " ")}
+                  <span className="relative z-10">{item.replace("-", " ")}</span>
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
                 </Link>
               ))}
             </nav>
@@ -109,9 +110,9 @@ export function Header() {
             <div className="flex items-center justify-center absolute left-1/2 -translate-x-1/2">
               <Link
                 href="/"
-                className="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-full"
+                className="flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded-full transition-all duration-300 ease-out hover:scale-105 active:scale-95"
               >
-                <div className="relative h-16 w-16 md:h-20 md:w-20">
+                <div className="relative h-16 w-16 md:h-20 md:w-20 transition-opacity duration-300 ease-out hover:opacity-90">
                   <Image
                     src="/images/logo-blanco.webp"
                     alt="JuegoTenis"
@@ -129,7 +130,7 @@ export function Header() {
               href="https://wa.me/5491123110735"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-semibold uppercase tracking-wide transition-all rounded-full border-2 bg-brand-500 text-white border-brand-500 hover:bg-brand-600 hover:border-brand-600 drop-shadow-lg whitespace-nowrap"
+              className="px-3 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-semibold uppercase tracking-wide transition-all duration-300 ease-out rounded-full border-2 bg-brand-500 text-white border-brand-500 hover:bg-brand-600 hover:border-brand-600 hover:-translate-y-0.5 active:translate-y-0 drop-shadow-lg whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
             >
               <span className="hidden sm:inline">Reservá tu turno</span>
               <span className="sm:hidden">WhatsApp</span>
@@ -159,9 +160,10 @@ export function Header() {
                     key={item}
                     href={`#${item}`}
                     onClick={handleLinkClick}
-                    className="text-base font-medium uppercase tracking-wide text-text-50 hover:text-brand-300 drop-shadow-md transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded"
+                    className="relative text-base font-medium uppercase tracking-wide text-text-50 hover:text-brand-300 drop-shadow-md transition-all duration-300 ease-out py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded px-2 group"
                   >
-                    {item.replace("-", " ")}
+                    <span className="relative z-10">{item.replace("-", " ")}</span>
+                    <span className="absolute bottom-1 left-2 right-2 h-0.5 bg-brand-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
                   </Link>
                 ))}
               </div>

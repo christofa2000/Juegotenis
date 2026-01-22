@@ -168,3 +168,16 @@ body {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+/* Location hover effect - solo desktop */
+@media (hover: hover) and (min-width: 768px) {
+  .location-hover-container:hover .location-image {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  .location-hover-container:hover .location-map {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+}

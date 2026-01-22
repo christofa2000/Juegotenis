@@ -1,6 +1,18 @@
 // generated with Cursor — reviewed by Christian Oscar Papa
+"use client";
+
 import { Button } from "@/components/marketing/ui/Button";
 import Image from "next/image";
+
+// Helper para generar URL de embed de Google Maps desde dirección
+// Nota: Para obtener la URL de embed correcta, ir a Google Maps, buscar la dirección,
+// hacer clic en "Compartir" > "Insertar un mapa" y copiar la URL del iframe
+const getMapsEmbedUrl = (address: string): string => {
+  const encodedAddress = encodeURIComponent(address);
+  // Usar formato de embed estándar con búsqueda por dirección
+  // Esto funciona pero puede requerir interacción del usuario para cargar completamente
+  return `https://www.google.com/maps?q=${encodedAddress}&output=embed`;
+};
 
 const locations = [
   {
@@ -47,15 +59,32 @@ export function Locations() {
             <div className="grid md:grid-cols-2 gap-16 lg:gap-20">
               {locations.map((location) => (
                 <div key={location.name} className="flex flex-col">
-                  {/* Imagen */}
-                  <div className="relative h-[320px] w-full rounded-[4rem] overflow-hidden mb-6">
-                    <Image
-                      src={location.image}
-                      alt={location.alt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
+                  {/* Contenedor imagen/mapa con hover - solo desktop */}
+                  <div className="location-hover-container relative h-[320px] w-full rounded-[4rem] overflow-hidden mb-6">
+                    {/* Imagen - siempre visible, fade out en hover (solo desktop) */}
+                    <div className="location-image absolute inset-0 transition-all duration-300 ease-out">
+                      <Image
+                        src={location.image}
+                        alt={location.alt}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                    </div>
+                    {/* Mapa - solo visible en desktop hover, oculto en mobile */}
+                    <div className="location-map hidden md:block absolute inset-0 opacity-0 scale-95 transition-all duration-300 ease-out pointer-events-none">
+                      <iframe
+                        src={getMapsEmbedUrl(location.addressFull)}
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="w-full h-full"
+                        title={`Mapa de ${location.name}`}
+                      />
+                    </div>
                   </div>
 
                   {/* Botón con icono */}

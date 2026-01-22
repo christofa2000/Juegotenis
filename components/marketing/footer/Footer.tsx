@@ -12,9 +12,9 @@ export function Footer() {
             {/* Logo */}
             <Link
               href="/"
-              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500"
+              className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500 rounded transition-all duration-300 ease-out hover:scale-105 active:scale-95"
             >
-              <div className="relative h-16 w-32">
+              <div className="relative h-16 w-32 transition-opacity duration-300 ease-out hover:opacity-90">
                 <Image
                   src="/images/logo-blanco.webp"
                   alt="JuegoTenis"
@@ -29,27 +29,31 @@ export function Footer() {
             <nav className="flex flex-wrap items-center gap-6 flex-1">
               <Link
                 href="#clases"
-                className="text-white uppercase text-sm font-medium hover:text-brand-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500"
+                className="relative text-white uppercase text-sm font-medium hover:text-brand-200 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500 px-1 py-1 group"
               >
-                CLASES
+                <span className="relative z-10">CLASES</span>
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
               </Link>
               <Link
                 href="#torneos"
-                className="text-white uppercase text-sm font-medium hover:text-brand-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500"
+                className="relative text-white uppercase text-sm font-medium hover:text-brand-200 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500 px-1 py-1 group"
               >
-                TORNEOS
+                <span className="relative z-10">TORNEOS</span>
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
               </Link>
               <Link
                 href="#quienes-somos"
-                className="text-white uppercase text-sm font-medium hover:text-brand-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500"
+                className="relative text-white uppercase text-sm font-medium hover:text-brand-200 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500 px-1 py-1 group"
               >
-                QUIÉNES SOMOS
+                <span className="relative z-10">QUIÉNES SOMOS</span>
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
               </Link>
               <Link
                 href="#sedes"
-                className="text-white uppercase text-sm font-medium hover:text-brand-200 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500"
+                className="relative text-white uppercase text-sm font-medium hover:text-brand-200 transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-300 focus-visible:ring-offset-2 focus-visible:ring-offset-brand-500 px-1 py-1 group"
               >
-                SEDES
+                <span className="relative z-10">SEDES</span>
+                <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
               </Link>
             </nav>
 
