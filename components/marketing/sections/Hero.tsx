@@ -16,7 +16,7 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
         <div className="relative w-full max-w-4xl mx-auto aspect-[4/1]">
           <Image
-            src="/images/SOMOS-JUEGOTENIS.webp"
+            src="/images/SOMOS-JUEGOTENIS.png"
             alt="SOMOS JuegoTenis"
             fill
             className="object-contain drop-shadow-2xl"
