@@ -55,7 +55,7 @@ export function Footer() {
 
             {/* Copyright */}
             <p className="text-white text-sm text-center md:text-left md:ml-auto">
-              © 2025 JuegoTenis. Todos los derechos reservados.
+              © 2026 JuegoTenis. Todos los derechos reservados.
             </p>
           </div>
         </div>

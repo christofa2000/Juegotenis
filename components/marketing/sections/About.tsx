@@ -24,7 +24,7 @@ export function About() {
         {/* Título */}
         <div className="mb-10 text-center">
           <h2 className="heading-uppercase flex items-center justify-center gap-4">
-            <span className="text-3xl">👥</span>
+            <span className="text-3xl"></span>
             <span className="text-text-50">QUIÉNES</span>
             <span className="text-brand-500">SOMOS</span>
           </h2>
