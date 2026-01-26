@@ -54,8 +54,8 @@ export function FinalCTA() {
                 />
               </svg>
               <div className="text-base font-medium text-text-950 text-center">
-                <div>Lunes a Viernes 9:00 - 21:00</div>
-                <div>Sábados 9:00 - 18:00</div>
+                <div>Lunes a Viernes 9:00 - 19:00</div>
+                <div>Sábados 9:00 - 16:00</div>
               </div>
             </div>
             <div className="flex flex-col items-center">
@@ -67,7 +67,7 @@ export function FinalCTA() {
                   href="https://tiktok.com/@juegotenis"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center hover:opacity-90 transition-all hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+                  className="w-12 h-12 rounded-full bg-black flex items-center justify-center hover:opacity-90 transition-all hover:scale-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
                   aria-label="Síguenos en TikTok"
                 >
                   <SiTiktok className="w-6 h-6 text-white" />

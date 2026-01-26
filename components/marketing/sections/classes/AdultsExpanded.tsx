@@ -99,8 +99,8 @@ export function AdultsExpanded() {
           <div id={nivelesId} className="mt-4">
             <ul className="space-y-2 text-text-700">
               {[
-                "Inicial",
-                "Inicial con experiencia",
+                "Basico",
+                "Basico con experiencia",
                 "Intermedio",
                 "Avanzado",
               ].map((lvl) => (
