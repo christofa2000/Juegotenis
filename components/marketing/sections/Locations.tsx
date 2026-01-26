@@ -1,6 +1,7 @@
 // generated with Cursor — reviewed by Christian Oscar Papa
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/marketing/ui/Button";
 import Image from "next/image";
 
@@ -37,6 +38,16 @@ const locations = [
 ];
 
 export function Locations() {
+  // Estado para rastrear qué mapas se han cargado (solo se cargan en hover)
+  const [loadedMaps, setLoadedMaps] = useState<Set<string>>(new Set());
+
+  const handleMapHover = (locationName: string) => {
+    // Solo cargar el mapa si no se ha cargado antes
+    if (!loadedMaps.has(locationName)) {
+      setLoadedMaps((prev) => new Set(prev).add(locationName));
+    }
+  };
+
   return (
     <section id="sedes" className="relative bg-surface-900 scroll-mt-20">
       <div className="py-20 lg:py-28">
@@ -60,7 +71,10 @@ export function Locations() {
               {locations.map((location) => (
                 <div key={location.name} className="flex flex-col">
                   {/* Contenedor imagen/mapa con hover - solo desktop */}
-                  <div className="location-hover-container relative h-[320px] w-full rounded-[4rem] overflow-hidden mb-6">
+                  <div
+                    className="location-hover-container relative h-[320px] w-full rounded-[4rem] overflow-hidden mb-6"
+                    onMouseEnter={() => handleMapHover(location.name)}
+                  >
                     {/* Imagen - siempre visible, fade out en hover (solo desktop) */}
                     <div className="location-image absolute inset-0 transition-all duration-300 ease-out">
                       <Image
@@ -72,19 +86,22 @@ export function Locations() {
                       />
                     </div>
                     {/* Mapa - solo visible en desktop hover, oculto en mobile */}
-                    <div className="location-map hidden md:block absolute inset-0 opacity-0 scale-95 transition-all duration-300 ease-out pointer-events-none">
-                      <iframe
-                        src={getMapsEmbedUrl(location.addressFull)}
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        className="w-full h-full"
-                        title={`Mapa de ${location.name}`}
-                      />
-                    </div>
+                    {/* Solo renderizar iframe si el mapa ha sido cargado (hover) */}
+                    {loadedMaps.has(location.name) && (
+                      <div className="location-map hidden md:block absolute inset-0 opacity-0 scale-95 transition-all duration-300 ease-out pointer-events-none">
+                        <iframe
+                          src={getMapsEmbedUrl(location.addressFull)}
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          className="w-full h-full"
+                          title={`Mapa de ${location.name}`}
+                        />
+                      </div>
+                    )}
                   </div>
 
                   {/* Botón con icono */}

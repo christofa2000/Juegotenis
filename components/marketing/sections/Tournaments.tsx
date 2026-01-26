@@ -6,7 +6,7 @@ export function Tournaments() {
   return (
     <section
       id="torneos"
-      className="relative h-[100dvh] overflow-hidden scroll-mt-20 grid grid-rows-[30dvh_1fr] min-h-0"
+      className="relative h-[100dvh] overflow-hidden scroll-mt-20 grid grid-rows-[30dvh_1fr] min-h-0 isolate"
     >
       {/* Fila 1: Banner superior con imagen */}
       <div className="relative min-h-0">
@@ -15,6 +15,7 @@ export function Tournaments() {
           alt="Cancha de tenis con zapatillas, raqueta y pelota"
           fill
           priority
+          fetchPriority="high"
           className="object-cover"
           sizes="100vw"
         />
@@ -23,7 +24,7 @@ export function Tournaments() {
       </div>
 
       {/* Logo NUESTROS TORNEOS en el medio entre banner y bloque blanco */}
-      <div className="absolute top-[30dvh] left-1/2 -translate-x-1/2 -translate-y-[60%] z-20 w-full">
+      <div className="absolute top-[30dvh] left-1/2 -translate-x-1/2 -translate-y-[60%] z-10 w-full pointer-events-none">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="relative w-full max-w-6xl lg:max-w-7xl mx-auto aspect-[3/1] lg:aspect-[4/1] h-[180px] lg:h-[240px] xl:h-[260px]">
             <Image
@@ -31,8 +32,10 @@ export function Tournaments() {
               alt="Nuestros Torneos"
               fill
               className="object-contain drop-shadow-2xl"
-              sizes="(max-width: 768px) 90vw, 1400px"
+              sizes="(max-width: 640px) 576px, (max-width: 1024px) 612px, 1400px"
               priority
+              fetchPriority="high"
+              quality={85}
             />
           </div>
         </div>
