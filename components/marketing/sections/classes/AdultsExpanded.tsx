@@ -99,7 +99,7 @@ export function AdultsExpanded() {
           <div id={nivelesId} className="mt-4">
             <ul className="space-y-2 text-text-700">
               {[
-                "Basico",
+                "Inicial",
                 "Basico con experiencia",
                 "Intermedio",
                 "Avanzado",
