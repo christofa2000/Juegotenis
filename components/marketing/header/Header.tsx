@@ -142,19 +142,19 @@ export function Header() {
       {/* Menú móvil overlay */}
       {isMenuOpen && (
         <>
-          {/* Overlay transparente */}
+          {/* Overlay oscuro */}
           <div
-            className="fixed inset-0 bg-transparent z-40 md:hidden"
+            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 md:hidden"
             onClick={() => setIsMenuOpen(false)}
             aria-hidden="true"
           />
-          {/* Menú drawer */}
+          {/* Menú drawer con fondo oscuro */}
           <nav
-            className="fixed top-20 left-0 right-0 bg-transparent z-40 md:hidden"
+            className="fixed top-20 left-4 right-4 bg-surface-950/70 backdrop-blur-md z-40 md:hidden shadow-lg rounded-lg"
             aria-label="Navegación móvil"
           >
-            <div className="container mx-auto px-4 py-6">
-              <div className="flex flex-col gap-4">
+            <div className="px-4 py-3">
+              <div className="flex flex-col gap-2">
                 {navItems.map((item) => (
                   <Link
                     key={item}

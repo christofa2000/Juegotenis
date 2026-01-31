@@ -77,13 +77,13 @@ export function Tournaments() {
           </div>
 
           {/* Botón CTA */}
-          <div className="flex justify-center">
+          <div className="flex justify-center pb-8 md:pb-4 lg:pb-6">
             <Button
               href="https://wa.me/5491123110735"
               variant="primary"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs lg:text-sm px-4 py-2"
+              className="text-xs lg:text-sm px-4 py-3 md:py-2"
             >
               RESERVA TU CLASE DE PRUEBA
             </Button>
