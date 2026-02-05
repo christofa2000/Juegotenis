@@ -1,8 +1,6 @@
 // generated with Cursor — reviewed by Christian Oscar Papa
-import type { Metadata } from 'next'
-import { defaultMetadata } from '@/lib/seo/metadata'
-
-export const metadata: Metadata = defaultMetadata
+// Metadata se define en el root layout (app/layout.tsx)
+// Este layout solo envuelve el contenido sin metadata adicional
 
 export default function MarketingLayout({
 	children,

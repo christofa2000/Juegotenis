@@ -1,0 +1,284 @@
+{
+  "timestamp": "2026-02-05T18:13:52.071Z",
+  "images": [
+    {
+      "filename": "adultos.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\adultos.jpg",
+        "size": 8471184,
+        "width": 5040,
+        "height": 3360,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\adultos.webp",
+        "size": 80432,
+        "width": 1200,
+        "height": 800,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 8390752,
+        "percent": "99.05"
+      }
+    },
+    {
+      "filename": "cancha.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\cancha.jpg",
+        "size": 2752567,
+        "width": 5184,
+        "height": 3456,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\cancha.webp",
+        "size": 148758,
+        "width": 1920,
+        "height": 1280,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 2603809,
+        "percent": "94.60"
+      }
+    },
+    {
+      "filename": "doblas.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\doblas.jpg",
+        "size": 7250875,
+        "width": 3660,
+        "height": 2745,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\doblas.webp",
+        "size": 216242,
+        "width": 1200,
+        "height": 900,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 7034633,
+        "percent": "97.02"
+      }
+    },
+    {
+      "filename": "hero.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\hero.jpg",
+        "size": 1317524,
+        "width": 5114,
+        "height": 3264,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\hero.webp",
+        "size": 83180,
+        "width": 1920,
+        "height": 1225,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 1234344,
+        "percent": "93.69"
+      }
+    },
+    {
+      "filename": "LOGO.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\LOGO.jpg",
+        "size": 745309,
+        "width": 3652,
+        "height": 3523,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\LOGO.webp",
+        "size": 21404,
+        "width": 800,
+        "height": 772,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 723905,
+        "percent": "97.13"
+      }
+    },
+    {
+      "filename": "NUESTROS-TORNEOS.png",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\NUESTROS-TORNEOS.png",
+        "size": 550234,
+        "width": 1863,
+        "height": 958,
+        "format": "png"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\NUESTROS-TORNEOS.webp",
+        "size": 60420,
+        "width": 800,
+        "height": 411,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 489814,
+        "percent": "89.02"
+      }
+    },
+    {
+      "filename": "nunez.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\nunez.jpg",
+        "size": 1022259,
+        "width": 1599,
+        "height": 1432,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\nunez.webp",
+        "size": 191230,
+        "width": 1200,
+        "height": 1075,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 831029,
+        "percent": "81.29"
+      }
+    },
+    {
+      "filename": "quienes-somos.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\quienes-somos.jpg",
+        "size": 6530299,
+        "width": 4798,
+        "height": 3199,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\quienes-somos.webp",
+        "size": 88604,
+        "width": 1200,
+        "height": 800,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 6441695,
+        "percent": "98.64"
+      }
+    },
+    {
+      "filename": "sideways-kids-playing-doubles-tennis.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\sideways-kids-playing-doubles-tennis.jpg",
+        "size": 15826629,
+        "width": 7360,
+        "height": 4912,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\sideways-kids-playing-doubles-tennis.webp",
+        "size": 76370,
+        "width": 1200,
+        "height": 801,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 15750259,
+        "percent": "99.52"
+      }
+    },
+    {
+      "filename": "SOMOS-JUEGOTENIS.png",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\SOMOS-JUEGOTENIS.png",
+        "size": 51537,
+        "width": 1846,
+        "height": 566,
+        "format": "png"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\SOMOS-JUEGOTENIS.webp",
+        "size": 27316,
+        "width": 800,
+        "height": 245,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 24221,
+        "percent": "47.00"
+      }
+    },
+    {
+      "filename": "tennis Ball.png",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\tennis Ball.png",
+        "size": 428073,
+        "width": 1500,
+        "height": 1500,
+        "format": "png"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\tennis Ball.webp",
+        "size": 13440,
+        "width": 600,
+        "height": 600,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 414633,
+        "percent": "96.86"
+      }
+    },
+    {
+      "filename": "torneos.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\torneos.jpg",
+        "size": 2308835,
+        "width": 5760,
+        "height": 3840,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\torneos.webp",
+        "size": 80222,
+        "width": 1920,
+        "height": 1280,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 2228613,
+        "percent": "96.53"
+      }
+    },
+    {
+      "filename": "view-tennis-racket-hitting-ball.jpg",
+      "original": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\view-tennis-racket-hitting-ball.jpg",
+        "size": 4782436,
+        "width": 5824,
+        "height": 3264,
+        "format": "jpeg"
+      },
+      "optimized": {
+        "path": "C:\\Proyectos\\Tenis\\tenis\\public\\images\\view-tennis-racket-hitting-ball.webp",
+        "size": 44508,
+        "width": 1200,
+        "height": 673,
+        "format": "webp"
+      },
+      "reduction": {
+        "bytes": 4737928,
+        "percent": "99.07"
+      }
+    }
+  ],
+  "summary": {
+    "totalOriginalSize": 52037761,
+    "totalOptimizedSize": 1132126,
+    "totalReduction": 50905635,
+    "totalReductionPercent": "97.82"
+  }
+}

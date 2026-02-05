@@ -119,7 +119,6 @@ export function Header() {
                     fill
                     className="object-contain rounded-full"
                     sizes="(max-width: 768px) 64px, 80px"
-                    priority
                   />
                 </div>
               </Link>

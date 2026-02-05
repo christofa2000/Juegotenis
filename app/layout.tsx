@@ -1,12 +1,15 @@
 // generated with Cursor — reviewed by Christian Oscar Papa
 import type { Metadata } from 'next'
 import { lexend } from '@/app/fonts'
+import { defaultMetadata } from '@/lib/seo/metadata'
 import './globals.css'
 
 export const metadata: Metadata = {
-	title: 'JuegoTenis - Academia de Tenis en Buenos Aires',
-	description:
-		'Academia de tenis en Buenos Aires. Clases para adultos, niños y adolescentes. Torneos amateurs.',
+	...defaultMetadata,
+	metadataBase: new URL('https://juegotenis.com'),
+	alternates: {
+		canonical: '/',
+	},
 }
 
 export default function RootLayout({

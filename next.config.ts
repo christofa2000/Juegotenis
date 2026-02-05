@@ -1,32 +1,56 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /**
+   * 🔹 Export estático
+   * Genera HTML/CSS/JS plano (ideal para DonWeb)
+   */
+  output: "export",
+
+  /**
+   * 🔹 React Compiler
+   */
   reactCompiler: true,
+
+  /**
+   * 🔹 Imágenes
+   * next/image NO optimiza en export estático,
+   * por eso se desactiva la optimización runtime
+   */
   images: {
-    formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
+    formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 60,
-    // Optimizar calidad de imágenes para reducir tamaño
     dangerouslyAllowSVG: false,
   },
+
+  /**
+   * 🔹 Compresión y headers
+   */
   compress: true,
   poweredByHeader: false,
-  // Optimización para reducir JavaScript sin usar
+
+  /**
+   * 🔹 Optimizaciones experimentales seguras para landing
+   */
   experimental: {
-    optimizePackageImports: ['react-icons'],
+    optimizePackageImports: ["react-icons"],
   },
-  // Configuración de Turbopack (Next.js 16 usa Turbopack por defecto)
+
+  /**
+   * 🔹 Turbopack (dev)
+   */
   turbopack: {},
-  // Configuración de webpack para builds de producción (no desarrollo con Turbopack)
+
+  /**
+   * 🔹 Webpack (solo build de producción)
+   */
   webpack: (config, { isServer, dev }) => {
-    // Solo aplicar en builds de producción (webpack)
     if (!dev && !isServer) {
-      // Optimizar tree-shaking y reducir bundle size
       config.optimization = {
         ...config.optimization,
         usedExports: true,
-        // No establecer sideEffects: false globalmente para evitar problemas con CSS y otros assets
       };
     }
     return config;

@@ -1,9 +1,9 @@
 // generated with Cursor — reviewed by Christian Oscar Papa
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/marketing/ui/Button";
 import Image from "next/image";
+import { useState } from "react";
 
 // Helper para generar URL de embed de Google Maps desde dirección
 // Nota: Para obtener la URL de embed correcta, ir a Google Maps, buscar la dirección,
@@ -21,7 +21,7 @@ const locations = [
     address: "Santiago Calzadilla 1350, CABA",
     addressFull:
       "Santiago Calzadilla 1350, C1429AAH Cdad. Autónoma de Buenos Aires, Argentina",
-    image: "/images/nuñez.jpg",
+    image: "/images/nunez.webp",
     alt: "Cancha de tenis en Núñez con jugadores",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Santiago+Calzadilla+1350,+C1429AAH+Cdad.+Autónoma+de+Buenos+Aires,+Argentina",
@@ -30,7 +30,7 @@ const locations = [
     name: "CABALLITO",
     address: "Doblas 1043, CABA",
     addressFull: "Doblas 1043, C1424 Cdad. Autónoma de Buenos Aires, Argentina",
-    image: "/images/doblas.jpg",
+    image: "/images/doblas.webp",
     alt: "Cancha de tenis en Caballito bajo estructura elevada",
     mapsUrl:
       "https://www.google.com/maps/search/?api=1&query=Doblas+1043,+C1424+Cdad.+Autónoma+de+Buenos+Aires,+Argentina",

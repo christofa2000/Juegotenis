@@ -6,16 +6,14 @@ export function Tournaments() {
   return (
     <section
       id="torneos"
-      className="relative h-[100dvh] overflow-hidden scroll-mt-20 grid grid-rows-[30dvh_1fr] min-h-0 isolate"
+      className="relative min-h-[100dvh] md:h-[100dvh] overflow-hidden scroll-mt-20 md:grid md:grid-rows-[30dvh_1fr] isolate"
     >
       {/* Fila 1: Banner superior con imagen */}
-      <div className="relative min-h-0">
+      <div className="relative h-[30dvh] md:min-h-0">
         <Image
-          src="/images/torneos.jpg"
+          src="/images/torneos.webp"
           alt="Cancha de tenis con zapatillas, raqueta y pelota"
           fill
-          priority
-          fetchPriority="high"
           className="object-cover"
           sizes="100vw"
         />
@@ -28,22 +26,19 @@ export function Tournaments() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="relative w-full max-w-6xl lg:max-w-7xl mx-auto aspect-[3/1] lg:aspect-[4/1] h-[180px] lg:h-[240px] xl:h-[260px]">
             <Image
-              src="/images/NUESTROS-TORNEOS.png"
+              src="/images/NUESTROS-TORNEOS.webp"
               alt="Nuestros Torneos"
               fill
               className="object-contain drop-shadow-2xl"
               sizes="(max-width: 640px) 576px, (max-width: 1024px) 612px, 1400px"
-              priority
-              fetchPriority="high"
-              quality={85}
             />
           </div>
         </div>
       </div>
 
       {/* Fila 2: Bloque blanco inferior con contenido */}
-      <div className="bg-surface-0 min-h-0 overflow-y-auto">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl h-full flex flex-col justify-center pt-28 lg:pt-36 xl:pt-40 pb-4 lg:pb-6">
+      <div className="bg-surface-0 md:min-h-0 md:overflow-y-auto overflow-y-visible">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl pt-28 lg:pt-36 xl:pt-40 pb-4 lg:pb-6">
           {/* Título */}
           <h2 className="text-xl lg:text-2xl xl:text-3xl font-bold mb-4 lg:mb-6 text-center">
             <span className="text-text-950">VIVÍ LA EMOCIÓN DE </span>
@@ -51,7 +46,7 @@ export function Tournaments() {
           </h2>
 
           {/* Texto en dos columnas */}
-          <div className="grid md:grid-cols-2 gap-4 lg:gap-6 mb-4 lg:mb-6 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-4 lg:gap-6 mb-6 lg:mb-6 max-w-5xl mx-auto">
             <div className="space-y-3 lg:space-y-4 text-text-700 text-sm lg:text-base leading-relaxed">
               <p>
                 En JuegoTenis organizamos encuentros y torneos amateurs donde
@@ -77,7 +72,7 @@ export function Tournaments() {
           </div>
 
           {/* Botón CTA */}
-          <div className="flex justify-center pb-8 md:pb-4 lg:pb-6">
+          <div className="flex justify-center pb-12 md:pb-8 lg:pb-6">
             <Button
               href="https://wa.me/5491123110735"
               variant="primary"

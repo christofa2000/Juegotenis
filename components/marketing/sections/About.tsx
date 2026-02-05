@@ -10,7 +10,7 @@ export function About() {
     >
       {/* Imagen de fondo */}
       <Image
-        src="/images/cancha.jpg"
+        src="/images/cancha.webp"
         alt="Cancha de tenis"
         fill
         className="object-cover"
@@ -37,12 +37,11 @@ export function About() {
               {/* Círculo */}
               <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/quienes-somos.jpg"
+                  src="/images/quienes-somos.webp"
                   alt="Equipo de JuegoTenis"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 352px, 512px"
-                  priority
                 />
               </div>
 
@@ -61,7 +60,7 @@ export function About() {
 
                 <div className="relative w-32 h-32 sm:w-40 sm:h-40 lg:w-56 lg:h-56">
                   <Image
-                    src="/images/tennis Ball.png"
+                    src="/images/tennis Ball.webp"
                     alt="Pelota de tenis"
                     fill
                     className="object-contain drop-shadow-2xl"

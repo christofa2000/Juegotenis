@@ -33,7 +33,7 @@ export function Classes() {
         <ClassesCard
           type="adults"
           title="ADULTOS"
-          imageSrc="/images/adultos.jpg"
+          imageSrc="/images/adultos.webp"
           imageAlt="Pareja adulta jugando tenis en la cancha"
           description="Clases diseñadas para adultos de todos los niveles. Mejorá tu técnica, desarrollá tu juego y disfrutá del tenis en un ambiente amigable y profesional."
           activeCard={activeCard}
@@ -45,7 +45,7 @@ export function Classes() {
         <ClassesCard
           type="kids"
           title="NIÑOS & ADOLESCENTES"
-          imageSrc="/images/sideways-kids-playing-doubles-tennis.jpg"
+          imageSrc="/images/sideways-kids-playing-doubles-tennis.webp"
           imageAlt="Niños jugando tenis en la cancha"
           description="Escuela infantil de tenis con una metodología sólida y adaptada a cada edad. Utilizamos el método 'Play and Stay', que adapta la pelota y cancha según el desarrollo del niño."
           activeCard={activeCard}

@@ -5,10 +5,11 @@ export function Hero() {
   return (
     <section className="relative h-[100dvh] flex items-center justify-center overflow-hidden">
       <Image
-        src="/images/hero.jpg"
+        src="/images/hero.webp"
         alt="Jugador de tenis golpeando la pelota en acción"
         fill
         priority
+        fetchPriority="high"
         className="object-cover object-[80%_20%]"
         sizes="100vw"
       />
@@ -16,7 +17,7 @@ export function Hero() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
         <div className="relative w-full max-w-4xl mx-auto aspect-[4/1]">
           <Image
-            src="/images/SOMOS-JUEGOTENIS.png"
+            src="/images/SOMOS-JUEGOTENIS.webp"
             alt="SOMOS JuegoTenis"
             fill
             className="object-contain drop-shadow-2xl"

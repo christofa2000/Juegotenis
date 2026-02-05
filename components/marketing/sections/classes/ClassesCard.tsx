@@ -44,7 +44,6 @@ export function ClassesCard({
           fill
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
-          priority
         />
         <div className="absolute inset-0 bg-gradient-to-b from-surface-950/30 via-surface-950/25 to-surface-950/35 flex items-center justify-center">
           <h2 className="heading-uppercase text-text-50 drop-shadow-2xl text-center px-4">
